@@ -11,7 +11,9 @@ ffmpeg -loop 1 -i image.png -i audio.wav -c:v libx264 -tune stillimage -c:a aac 
 ```shell
 whisper --output_format srt --model turbo --language en audio.wav
 ```
-- 最后通过OpenAI的GPT-4o-mini翻译字幕，并生成双语字幕(`translate_subtitle.ipynb`)
-**注：需要配置.env文件，将OPENAI_API_KEY配置为你的OpenAI API Key**
-
+- 最后通过OpenAI的GPT-4o-mini翻译字幕，并生成双语字幕(`translate_subtitle.py`)
+**注：需要配置环境变量OPENAI_API_KEY**
+```shell
+python translate_subtitle.py -i subtitle.srt -o bilingual_subtitle.srt
+```
 
