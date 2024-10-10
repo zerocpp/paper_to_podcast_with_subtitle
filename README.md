@@ -17,7 +17,14 @@ whisper --output_format srt --model turbo --language en -o OUTPUT_DIR audio.wav
 python translate_subtitle.py -i subtitle.srt -o bilingual_subtitle.srt
 ```
 
+- 直接将whisper生成的srt文件转换成文本(`subtitle_to_text.py`)
 ```shell
-# 将wav转换成mp4
-ffmpeg -i audio.wav audio.mp4
+python subtitle_to_text.py -i subtitle.srt -o subtitle_text.txt
+```
+
+- 将文本直接输入到GTP-o1中去，提示词如下：
+```text
+给你一段对话音频的转录文本，对话中有且仅有两个人，请帮我翻译成中文，猜测每句话的说话人并标注。对话文本如下：
+<SUBTITLE_TEXT>
+</SUBTITLE_TEXT>
 ```
