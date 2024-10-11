@@ -14,7 +14,7 @@ python translate_podcast.py -i input/2402.18048.wav -o output/2402.18048 --no-ge
 
 
 
-## 使用方法2
+## 使用方法2（不推荐，过时）
 - 首先通过Google的NotebookLM将论文转换成播客音频([NotebookLM](https://notebooklm.google))
 - 然后通过ffmpeg将音频(`audio.wav`)和图片(`image.png`)合并成视频(`video.mp4`)
 ```shell
